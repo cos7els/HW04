@@ -52,7 +52,7 @@ public class Tasks {
             }
         }
         System.out.println(Arrays.toString(array));
-        System.out.println("The sum of elements to multiple of 5 and 8: " + sum);
+        System.out.printf("The sum of elements to multiple of 5 and 8: %d.\n", sum);
     }
 
     public static void taskFourteen() {
@@ -66,12 +66,12 @@ public class Tasks {
             }
         }
         avg /= counter;
-        System.out.println("The avg of array elements in range between -2 and 10: " + avg);
+        System.out.printf("The avg of array elements in range between -2 and 10: %f.\n", avg);
     }
 
     public static void taskThirteen() {
-        int[] array = initialArray();
-        //int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        //int[] array = initialArray();
+        int[] array = {0, 1, 2, 3, 2, 5, 6, 7, 8, 9};
         int maxSequence = 0;
         int sequenceCount;
         int minimalDeleteValue = 0;
@@ -141,14 +141,14 @@ public class Tasks {
         int[] array = initialArray();
         int max = Integer.MIN_VALUE;
         boolean isUnique = true;
-        for (int i = 0; i < array.length; i += 2) {
+        for (int i = 0; i < array.length; i++) {
             if (max == array[i]) {
                 isUnique = false;
-            } else if (max < array[i]) {
+            } else if (max < array[i] && i % 2 == 0) {
                 max = array[i];
             }
         }
-        System.out.printf("The maximal element of array: %d is unique: %b", max, isUnique);
+        System.out.printf("The maximal element on even position: %d is unique: %b.\n", max, isUnique);
     }
 
     public static void taskNine() {
@@ -164,7 +164,7 @@ public class Tasks {
                 break;
             }
         }
-        System.out.println("The array have the element multiple to A and not multiple to B: " + w);
+        System.out.printf("The array have the element multiple to A and not multiple to B: %b.\n", w);
     }
 
     public static void taskEight() {
@@ -176,7 +176,7 @@ public class Tasks {
                 break;
             }
         }
-        System.out.println("The array have the three equals elements: " + r);
+        System.out.printf("The array have the three equals elements: %b.\n", r);
     }
 
     public static void taskSeven() {
@@ -254,8 +254,7 @@ public class Tasks {
                     i++;
                 }
             }
-            System.out.print("The new array for even elements: ");
-            printArray(newArray);
+            System.out.println("The new array for even elements: " + Arrays.toString(newArray));
         } else {
             System.out.println("There is no even elements");
         }
@@ -274,11 +273,11 @@ public class Tasks {
         firstAvg /= firstArray.length;
         secondAvg /= secondArray.length;
         if (firstAvg > secondAvg) {
-            System.out.printf("The avg of first array is bigger than avg of second array: %f.", firstAvg);
+            System.out.printf("The avg of first array is bigger than avg of second array: %f > %f.\n", firstAvg, secondAvg);
         } else if (secondAvg > firstAvg) {
-            System.out.printf("The avg of second array is bigger than avg of first array: %f.", secondAvg);
+            System.out.printf("The avg of second array is bigger than avg of first array: %f > %f.\n", secondAvg, firstAvg);
         } else if (firstAvg == secondAvg) {
-            System.out.printf("The avg of first and second arrays is equals: %f = %f.", firstAvg, secondAvg);
+            System.out.printf("The avg of first and second arrays is equals: %f == %f.\n", firstAvg, secondAvg);
         }
     }
 
@@ -299,7 +298,7 @@ public class Tasks {
         }
         avg /= array.length;
         System.out.println(Arrays.toString(array));
-        System.out.printf("The max value: %f, the min value: %f, the avg value: %f.", max, min, avg);
+        System.out.printf("The max value: %f, the min value: %f, the avg value: %f.\n", max, min, avg);
 
     }
 
@@ -326,9 +325,9 @@ public class Tasks {
                     i++;
                 }
             }
-            System.out.printf("Array without %d: " + Arrays.toString(newArray), searchElement);
+            System.out.printf("Array without %d: " + Arrays.toString(newArray) +".\n", searchElement);
         } else {
-            System.out.printf("The value %d is NOT enter to the array", searchElement);
+            System.out.printf("The value %d is NOT enter to the array.\n", searchElement);
         }
     }
 
