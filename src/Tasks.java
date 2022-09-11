@@ -92,17 +92,6 @@ public class Tasks {
         System.out.printf("The minimal quantity of elements to delete for increased sequence: %d.\n", minimalDeleteValue);
     }
 
-    public static void isArrayIncreasedSequency(int[] array, int from, int to) {
-        boolean result = true;
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] >= array[i + 1]) {
-                result = false;
-                break;
-            }
-        }
-        System.out.println(result);
-    }
-
     public static void taskTwelve() {
         int[] array = initialArray();
         String[] newArray = new String[array.length + 1];
