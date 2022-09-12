@@ -20,7 +20,7 @@ public class Tasks {
         //taskTen();
         //taskEleven();
         //taskTwelve();
-        //taskThirteen();
+        taskThirteen();
         //taskFourteen();
         //taskFifteen();
         //taskSixteen();
@@ -71,24 +71,18 @@ public class Tasks {
 
     public static void taskThirteen() {
         //int[] array = initialArray();
-        int[] array = {0, 1, 2, 3, 2, 5, 6, 7, 8, 9};
-        int maxSequence = 0;
-        int sequenceCount;
+        int[] array = {0, 1, 2, 3, 13, 5, 6, 17, 8, 9};
+        int min = 0;
         int minimalDeleteValue = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-            sequenceCount = 1;
-            for (int j = i; j < array.length - 1; j++) {
-                if (array[j] < array[j + 1]) {
-                    sequenceCount++;
-                } else {
-                    sequenceCount = 1;
-                }
-                if (maxSequence < sequenceCount) {
-                    maxSequence = sequenceCount;
+        for (int i = 0; i < array.length; i++) {
+            min = array[i];
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] <= min) {
+                    minimalDeleteValue++;
+                    break;
                 }
             }
         }
-        minimalDeleteValue = array.length - maxSequence;
         System.out.printf("The minimal quantity of elements to delete for increased sequence: %d.\n", minimalDeleteValue);
     }
 
@@ -325,7 +319,7 @@ public class Tasks {
                     i++;
                 }
             }
-            System.out.printf("Array without %d: " + Arrays.toString(newArray) +".\n", searchElement);
+            System.out.printf("Array without %d: " + Arrays.toString(newArray) + ".\n", searchElement);
         } else {
             System.out.printf("The value %d is NOT enter to the array.\n", searchElement);
         }
